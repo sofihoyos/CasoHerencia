@@ -1,15 +1,35 @@
 package clases;
+import javax.swing.JOptionPane;
 
 public  class Persona {
-    private String dni;
+    private String DNI;
     private String nombre;
     private String apellido;
     private String fechaNacimiento;
     private String direccion;
     private String ciudadProcedencia;
 
-    public Persona(String dni, String nombre, String apellido, String fechaNacimiento, String direccion, String ciudadProcedencia) {
-        this.dni = dni;
+
+
+    public void imprimirDatosPersona() {
+        System.out.println("DNI: " + DNI
+                + "/n Nombre: " + nombre + apellido
+                + "/n Fecha Nacimiento: " + fechaNacimiento
+                + "/n Direccion: " + direccion
+                + "/n Ciudad de Procedencia: " + ciudadProcedencia);
+    }
+
+    public  void registrarDatos(){
+        DNI= JOptionPane.showInputDialog("Ingrese el numero de documento");
+        nombre= JOptionPane.showInputDialog("Ingrese el nombre");
+        apellido= JOptionPane.showInputDialog("Ingrese el apellido");
+        fechaNacimiento= JOptionPane.showInputDialog("Ingrese la fecha de nacimiento (dd/mm/aaaa)");
+        direccion=JOptionPane.showInputDialog("Ingrese la dirección");
+        ciudadProcedencia=JOptionPane.showInputDialog("Ingrese la cuidad de procedencia");
+    };
+
+    public Persona(String DNI, String nombre, String apellido, String fechaNacimiento, String direccion, String ciudadProcedencia) {
+        this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
@@ -17,8 +37,8 @@ public  class Persona {
         this.ciudadProcedencia = ciudadProcedencia;
     }
 
-    public String getDni() { return dni; }
-    public void setDni(String dni) { this.dni = dni; }
+    public String getDni() { return DNI; }
+    public void setDni(String dni) { this.DNI = dni; }
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public String getApellido() { return apellido; }
@@ -30,9 +50,5 @@ public  class Persona {
     public String getCiudadProcedencia() { return ciudadProcedencia; }
     public void setCiudadProcedencia(String ciudadProcedencia) { this.ciudadProcedencia = ciudadProcedencia; }
 
-    public  void registrarDatos();
 
-    public void imprimirDatosPersona() {
-        System.out.println("DNI: " + dni + ", Nombre: " + nombre + " " + apellido + ", Fecha Nacimiento: " + fechaNacimiento);
-    }
 }
