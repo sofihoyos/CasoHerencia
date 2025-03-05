@@ -11,6 +11,8 @@ public  class Persona {
 
 
 
+
+
     public void imprimirDatosPersona() {
         System.out.println("DNI: " + DNI
                 + "/n Nombre: " + nombre + apellido
