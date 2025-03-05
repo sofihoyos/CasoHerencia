@@ -1,3 +1,5 @@
+package empleado;
+
 class EmpleadoPlanilla extends Empleado {
     private double salarioMensual;
     private double porcentajeHoraExtra;

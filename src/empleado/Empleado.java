@@ -1,3 +1,7 @@
+package empleado;
+
+import clases.Persona;
+
 public class Empleado extends Persona {
     private String codigoEmpleado;
     private int horasExtras;

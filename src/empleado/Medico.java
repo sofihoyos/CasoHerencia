@@ -1,3 +1,5 @@
+package empleado;
+
 class Medico extends EmpleadoPlanilla {
     private String especialidad;
     private int numeroConsultorio;

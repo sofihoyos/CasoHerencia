@@ -1,3 +1,6 @@
+import clases.Paciente;
+import empleado.Medico;
+
 import java.util.Date;
 
 class CitaMedica {
@@ -37,7 +40,7 @@ class CitaMedica {
 
     public void imprimirCita() {
         System.out.println("Cita Médica:");
-        System.out.println("Paciente: " + paciente.getNombre() + " " + paciente.getApellido());
+        System.out.println("clases.Paciente: " + paciente.getNombre() + " " + paciente.getApellido());
         System.out.println("Médico: " + medico.getNombre() + " " + medico.getApellido());
         System.out.println("Especialidad: " + medico.getEspecialidad());
         System.out.println("Fecha: " + fecha);

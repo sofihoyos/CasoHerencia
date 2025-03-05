@@ -1,3 +1,5 @@
+package empleado;
+
 class EmpleadoEventual extends Empleado {
     private double honorariosPorHora;
     private String fechaTerminoContrato;

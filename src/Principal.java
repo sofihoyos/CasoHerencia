@@ -1,10 +1,15 @@
+import clases.Paciente;
+import empleado.Empleado;
+import empleado.EmpleadoPlanilla;
+import empleado.Medico;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Main {
+public class Principal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Empleado> empleados = new ArrayList<>();
@@ -64,7 +69,7 @@ public class Main {
             String dniPaciente = scanner.next();
             Paciente paciente = buscarPaciente(pacientes, dniPaciente);
             if (paciente == null) {
-                System.out.println("Paciente no encontrado.");
+                System.out.println("clases.Paciente no encontrado.");
                 continue;
             }
 
