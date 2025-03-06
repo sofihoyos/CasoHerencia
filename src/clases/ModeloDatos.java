@@ -4,6 +4,7 @@ import empleado.EmpleadoEventual;
 import empleado.Medico;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class ModeloDatos {
     HashMap<String, Paciente> pacientesMap;
@@ -36,5 +37,45 @@ public class ModeloDatos {
     public void registrarPersona(Medico miMedico){
         medicoMap.put(miMedico.getDni(), miMedico);
         System.out.println("Se ha registrado el medico " +miMedico.getNombre()+ "¡EXITOSAMENTE!");
+    }
+
+    public void imprimirPacientes(){
+        String msj="PACIENTES REGISTRADOS\n";
+        Iterator<String> iterator=pacientesMap.keySet().iterator();
+
+        while (iterator.hasNext()){
+            String clave= iterator.next();
+            pacientesMap.get(clave).imprimirDatosPersona(msj);
+        }
+    }
+
+    public void imprimirEmpleadoEventuales(){
+        String msj="EMPLEADOS EVENTUALES REGISTRADOS\n";
+        Iterator<String> iterator=empleadoEventualMap.keySet().iterator();
+
+        while (iterator.hasNext()){
+            String clave= iterator.next();
+            empleadoEventualMap.get(clave).imprimirDatosPersona(msj);
+        }
+    }
+
+    public void imprimirEmpleadosPlanilla(){
+        String msj="EMPLEADOS POR PLANILLA REGISTRADOS\n";
+        Iterator<String> iterator=empleadoPlanillaMap.keySet().iterator();
+
+        while (iterator.hasNext()){
+            String clave= iterator.next();
+            empleadoPlanillaMap.get(clave).imprimirDatosPersona(msj);
+        }
+    }
+
+    public void imprimirMedico(){
+        String msj="MEDICOS REGISTRADOS\n";
+        Iterator<String> iterator=medicoMap.keySet().iterator();
+
+        while (iterator.hasNext()){
+            String clave= iterator.next();
+            medicoMap.get(clave).imprimirDatosPersona(msj);
+        }
     }
 }
