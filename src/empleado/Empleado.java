@@ -2,6 +2,8 @@ package empleado;
 
 import clases.Persona;
 
+import javax.swing.*;
+
 public class Empleado extends Persona {
     private String codigoEmpleado;
     private int horasExtras;
@@ -16,6 +18,17 @@ public class Empleado extends Persona {
         this.fechaIngreso = fechaIngreso;
         this.area = area;
         this.cargo = cargo;
+    }
+
+    @Override
+    public void registrarDatos(){
+        super.registrarDatos();
+
+        codigoEmpleado= JOptionPane.showInputDialog("Ingrese el codigo del empleado");
+        horasExtras=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de horas extras"));
+        fechaIngreso=JOptionPane.showInputDialog("Ingresa la fecha de ingreso (dd/mm/aaaa)");
+        area=JOptionPane.showInputDialog("Ingrese el area");
+        cargo=JOptionPane.showInputDialog("Ingrese el cargo");
     }
 
     public String getCodigoEmpleado() { return codigoEmpleado; }

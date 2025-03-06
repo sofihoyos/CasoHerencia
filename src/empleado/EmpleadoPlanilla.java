@@ -1,4 +1,5 @@
 package empleado;
+import javax.swing.JOptionPane;
 
 class EmpleadoPlanilla extends Empleado {
     private double salarioMensual;
@@ -8,6 +9,14 @@ class EmpleadoPlanilla extends Empleado {
         super(dni, nombre, apellido, fechaNacimiento, direccion, ciudadProcedencia, codigoEmpleado, horasExtras, fechaIngreso, area, cargo);
         this.salarioMensual = salarioMensual;
         this.porcentajeHoraExtra = porcentajeHoraExtra;
+    }
+
+    @Override
+    public void registrarDatos(){
+        super.registrarDatos();
+
+        salarioMensual=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el salario mensual"));
+        porcentajeHoraExtra=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el porcentaje adicional por hora extra"));
     }
 
     public double getSalarioMensual() {
