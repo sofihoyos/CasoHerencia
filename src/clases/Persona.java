@@ -26,10 +26,10 @@ public  class Persona {
 
     public void imprimirDatosPersona() {
         System.out.println("DNI: " + DNI
-                + "/n Nombre: " + nombre + apellido
-                + "/n Fecha Nacimiento: " + fechaNacimiento
-                + "/n Direccion: " + direccion
-                + "/n Ciudad de Procedencia: " + ciudadProcedencia);
+                + "\n Nombre: " + nombre +" "+ apellido
+                + "\n Fecha Nacimiento: " + fechaNacimiento
+                + "\n Direccion: " + direccion
+                + "\n Ciudad de Procedencia: " + ciudadProcedencia);
     }
 
     public String getDni() { return DNI; }

@@ -26,22 +26,22 @@ public class ModeloDatos {
 
     public void registrarPersona(Paciente miPaciente){
         pacientesMap.put(miPaciente.getDni(), miPaciente);
-        System.out.println("Se ha registrado el paciente " +miPaciente.getNombre()+ "¡EXITOSAMENTE!");
+        System.out.println("Se ha registrado el paciente " +miPaciente.getNombre()+ " ¡EXITOSAMENTE!");
     }
 
     public void registrarPersona(EmpleadoPlanilla miEmpleadoPlanilla){
         empleadoPlanillaMap.put(miEmpleadoPlanilla.getDni(), miEmpleadoPlanilla);
-        System.out.println("Se ha registrado el empleado por planilla " +miEmpleadoPlanilla.getNombre()+ "¡EXITOSAMENTE!");
+        System.out.println("Se ha registrado el empleado por planilla " +miEmpleadoPlanilla.getNombre()+ " ¡EXITOSAMENTE!");
     }
 
     public void registrarPersona(EmpleadoEventual miEmpleadoEventual){
         empleadoEventualMap.put(miEmpleadoEventual.getDni(), miEmpleadoEventual);
-        System.out.println("Se ha registrado el empleado eventual " +miEmpleadoEventual.getNombre()+ "¡EXITOSAMENTE!");
+        System.out.println("Se ha registrado el empleado eventual " +miEmpleadoEventual.getNombre()+ " ¡EXITOSAMENTE!");
     }
 
     public void registrarPersona(Medico miMedico){
         medicoMap.put(miMedico.getDni(), miMedico);
-        System.out.println("Se ha registrado el medico " +miMedico.getNombre()+ "¡EXITOSAMENTE!");
+        System.out.println("Se ha registrado el medico " +miMedico.getNombre()+ " ¡EXITOSAMENTE!");
     }
 
     public void imprimirPacientes(){
@@ -111,5 +111,19 @@ public class ModeloDatos {
         citasList.add(miCita);
         System.out.println("Se ha registrado la cita exitosamente\n");
         System.out.println(miCita.informacionCitaMedica());
+    }
+
+    public void imprimirCitasMedicasProgramadas(){
+        System.out.println("CITAS MEDICAS PROGRAMADAS\n");
+        CitaMedica miCita = null;
+
+        if (citasList.size()>0) {
+            for (int i=0; i<citasList.size(); i++){
+                miCita=citasList.get(i);
+                System.out.println(miCita.informacionCitaMedica());
+            }
+        }else{
+            System.out.println("No hay citas programadas");
+        }
     }
 }

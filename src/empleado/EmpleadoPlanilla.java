@@ -18,6 +18,7 @@ public class EmpleadoPlanilla extends Empleado {
     }
 
     public void imprimirDatosPersona() {
+        super.imprimirDatosPersona();
         System.out.println("\n Salario Mensual: " + salarioMensual
                 + "\n Porcentaje Adicional por Hora Extra: " + porcentajeHoraExtra);
     }
