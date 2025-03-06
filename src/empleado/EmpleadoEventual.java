@@ -5,10 +5,8 @@ public class EmpleadoEventual extends Empleado {
     private double honorariosPorHora;
     private String fechaTerminoContrato;
 
-    public EmpleadoEventual(String dni, String nombre, String apellido, String fechaNacimiento, String direccion, String ciudadProcedencia, String codigoEmpleado, int horasExtras, String fechaIngreso, String area, String cargo, double honorariosPorHora, String fechaTerminoContrato) {
-        super(dni, nombre, apellido, fechaNacimiento, direccion, ciudadProcedencia, codigoEmpleado, horasExtras, fechaIngreso, area, cargo);
-        this.honorariosPorHora = honorariosPorHora;
-        this.fechaTerminoContrato = fechaTerminoContrato;
+    public EmpleadoEventual(){
+
     }
 
     @Override

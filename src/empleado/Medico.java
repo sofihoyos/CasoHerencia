@@ -5,21 +5,8 @@ public class Medico extends EmpleadoPlanilla {
     private String especialidad;
     private String numeroConsultorio;
 
-    public Medico(String dni, String nombre,
-                  String apellido, String fechaNacimiento,
-                  String direccion, String ciudadProcedencia,
-                  String codigoEmpleado, int horasExtras,
-                  String fechaIngreso, String area,
-                  String cargo, double salarioMensual,
-                  double porcentajeHoraExtra, String especialidad,
-                  String numeroConsultorio) {
-        super(dni, nombre, apellido, fechaNacimiento,
-                direccion, ciudadProcedencia, codigoEmpleado,
-                horasExtras, fechaIngreso, area, cargo,
-                salarioMensual, porcentajeHoraExtra);
+    public Medico(){
 
-        this.especialidad = especialidad;
-        this.numeroConsultorio = numeroConsultorio;
     }
 
     @Override

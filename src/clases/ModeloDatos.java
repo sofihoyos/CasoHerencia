@@ -35,6 +35,6 @@ public class ModeloDatos {
 
     public void registrarPersona(Medico miMedico){
         medicoMap.put(miMedico.getDni(), miMedico);
-        System.out.println("Se ha registrado el medico " +miMedico.getNombre()+ "¡EXITOSAMENTE!")
+        System.out.println("Se ha registrado el medico " +miMedico.getNombre()+ "¡EXITOSAMENTE!");
     }
 }

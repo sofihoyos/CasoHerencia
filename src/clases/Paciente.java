@@ -8,16 +8,8 @@ public class Paciente extends Persona {
     private String grupoSanguineo;
     private ArrayList<String> alergias;
 
-public Paciente(String DNI, String nombre,
-                String apellido, String fechaNacimiento,
-                String direccion, String ciudadProcedencia,
-                String numeroHistoriaClinica, String sexo,
-                String grupoSanguineo, ArrayList<String> alergias) {
-    super(DNI, nombre, apellido, fechaNacimiento, direccion, ciudadProcedencia);
-    this.numeroHistoriaClinica = numeroHistoriaClinica;
-    this.sexo = sexo;
-    this.grupoSanguineo = grupoSanguineo;
-    this.alergias = alergias;
+public Paciente (){
+
 }
 
     @Override

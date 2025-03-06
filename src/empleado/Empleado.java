@@ -9,13 +9,8 @@ public class Empleado extends Persona {
     private String area;
     private String cargo;
 
-    public Empleado(String dni, String nombre, String apellido, String fechaNacimiento, String direccion, String ciudadProcedencia, String codigoEmpleado, int horasExtras, String fechaIngreso, String area, String cargo) {
-        super(dni, nombre, apellido, fechaNacimiento, direccion, ciudadProcedencia);
-        this.codigoEmpleado = codigoEmpleado;
-        this.horasExtras = horasExtras;
-        this.fechaIngreso = fechaIngreso;
-        this.area = area;
-        this.cargo = cargo;
+    public Empleado(){
+
     }
 
     @Override

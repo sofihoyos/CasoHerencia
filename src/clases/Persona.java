@@ -9,8 +9,9 @@ public  class Persona {
     private String direccion;
     private String ciudadProcedencia;
 
+public Persona (){
 
-
+}
 
 
     public void imprimirDatosPersona() {
