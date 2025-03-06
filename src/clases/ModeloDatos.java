@@ -3,7 +3,9 @@ package clases;
 import empleado.EmpleadoPlanilla;
 import empleado.EmpleadoEventual;
 import empleado.Medico;
+import clases.CitaMedica;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -12,12 +14,14 @@ public class ModeloDatos {
     HashMap<String, EmpleadoPlanilla> empleadoPlanillaMap;
     HashMap<String, EmpleadoEventual> empleadoEventualMap;
     HashMap<String, Medico> medicoMap;
+    ArrayList<CitaMedica> citasList;
 
     public ModeloDatos(){
         pacientesMap = new HashMap<String, Paciente>();
         empleadoPlanillaMap = new HashMap<String, EmpleadoPlanilla>();
         empleadoEventualMap = new HashMap<String, EmpleadoEventual>();
         medicoMap = new HashMap<String, Medico>();
+        citasList = new ArrayList<CitaMedica>();
     }
 
     public void registrarPersona(Paciente miPaciente){
@@ -78,5 +82,34 @@ public class ModeloDatos {
             String clave= iterator.next();
             medicoMap.get(clave).imprimirDatosPersona();
         }
+    }
+
+    public Medico consultaMedicoPorNombre(String nombreMedico) {
+        for (Medico medico : medicoMap.values()) {
+            if (medico.getNombre().equalsIgnoreCase(nombreMedico)) {
+                return medico;
+                //al retornar automaticamente termina el ciclo
+            }
+        }
+
+        return null;
+        //si no se encuentra medico retorna nulo
+    }
+
+    public Paciente consultarPacientePorDocumento(String dniPaciente){
+        Paciente miPaciente= null;
+
+        if (pacientesMap.containsKey(dniPaciente)){
+            miPaciente=pacientesMap.get(dniPaciente);
+        }
+
+        //si el paciente existe lo retorna, sino retorna nulo
+        return miPaciente;
+    }
+
+    public void registrarCitaMedica(CitaMedica miCita){
+        citasList.add(miCita);
+        System.out.println("Se ha registrado la cita exitosamente\n");
+        System.out.println(miCita.informacionCitaMedica());
     }
 }

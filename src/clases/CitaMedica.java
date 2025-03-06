@@ -1,6 +1,5 @@
 package clases;
 import empleado.Medico;
-import clases.Paciente;
 
 public class CitaMedica{
     private Paciente paciente;
@@ -20,7 +19,7 @@ public class CitaMedica{
         this.lugar = lugar;
     }
 
-    public void informacionCitaMedica(){
+    public boolean informacionCitaMedica(){
         System.out.println("INFORMACION CITA MEDICA\n"
                 + "Paciente: "+paciente.getNombre() +
                 "\n Medico: "+medico.getNombre()
@@ -28,6 +27,7 @@ public class CitaMedica{
                 +"\n Fecha Consulta: "+fechaConsulta
                 +"\n Hora: "+horaConsulta
                 +"\n Lugar: "+lugar +"\n\n");
+        return false;
     }
 
     public Paciente getPaciente() {
