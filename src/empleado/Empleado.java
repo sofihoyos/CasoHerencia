@@ -1,7 +1,5 @@
 package empleado;
-
 import clases.Persona;
-
 import javax.swing.*;
 
 public class Empleado extends Persona {

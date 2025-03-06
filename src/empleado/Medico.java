@@ -1,7 +1,7 @@
 package empleado;
 import javax.swing.JOptionPane;
 
-class Medico extends EmpleadoPlanilla {
+public class Medico extends EmpleadoPlanilla {
     private String especialidad;
     private String numeroConsultorio;
 

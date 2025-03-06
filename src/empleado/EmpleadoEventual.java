@@ -1,7 +1,7 @@
 package empleado;
 import javax.swing.JOptionPane;
 
-class EmpleadoEventual extends Empleado {
+public class EmpleadoEventual extends Empleado {
     private double honorariosPorHora;
     private String fechaTerminoContrato;
 
