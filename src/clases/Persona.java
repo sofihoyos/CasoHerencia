@@ -9,12 +9,8 @@ public  class Persona {
     private String direccion;
     private String ciudadProcedencia;
 
-    public void imprimirDatosPersona() {
-        System.out.println("DNI: " + DNI
-                + "/n Nombre: " + nombre + apellido
-                + "/n Fecha Nacimiento: " + fechaNacimiento
-                + "/n Direccion: " + direccion
-                + "/n Ciudad de Procedencia: " + ciudadProcedencia);
+    public Persona() {
+
     }
 
     public  void registrarDatos(){
@@ -26,8 +22,14 @@ public  class Persona {
         ciudadProcedencia=JOptionPane.showInputDialog("Ingrese la cuidad de procedencia");
     };
 
-    public Persona() {
 
+
+    public void imprimirDatosPersona() {
+        System.out.println("DNI: " + DNI
+                + "/n Nombre: " + nombre + apellido
+                + "/n Fecha Nacimiento: " + fechaNacimiento
+                + "/n Direccion: " + direccion
+                + "/n Ciudad de Procedencia: " + ciudadProcedencia);
     }
 
     public String getDni() { return DNI; }

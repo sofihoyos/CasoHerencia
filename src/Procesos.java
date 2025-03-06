@@ -98,7 +98,7 @@ public class Procesos {
         menuImprimir+= "4. Listar Medicos\n";
         menuImprimir+= "Ingrese una opcion (1-4)\n";
 
-        int opcion=Integer.parseInt(JOptionPane.showInputDialog(menuImprimir))
+        int opcion=Integer.parseInt(JOptionPane.showInputDialog(menuImprimir));
 
         switch (opcion){
             case 1: miModeloDatos.imprimirPacientes(); break;

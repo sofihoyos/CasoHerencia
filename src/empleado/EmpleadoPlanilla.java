@@ -17,6 +17,11 @@ public class EmpleadoPlanilla extends Empleado {
         porcentajeHoraExtra=Double.parseDouble(JOptionPane.showInputDialog("Ingrese el porcentaje adicional por hora extra"));
     }
 
+    public void imprimirDatosPersona() {
+        System.out.println("\n Salario Mensual: " + salarioMensual
+                + "\n Porcentaje Adicional por Hora Extra: " + porcentajeHoraExtra);
+    }
+
     public double getSalarioMensual() {
         return salarioMensual;
     }

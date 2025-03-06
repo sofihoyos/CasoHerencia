@@ -40,42 +40,42 @@ public class ModeloDatos {
     }
 
     public void imprimirPacientes(){
-        String msj="PACIENTES REGISTRADOS\n";
+        System.out.println("PACIENTES REGISTRADOS\n");
         Iterator<String> iterator=pacientesMap.keySet().iterator();
 
         while (iterator.hasNext()){
             String clave= iterator.next();
-            pacientesMap.get(clave).imprimirDatosPersona(msj);
+            pacientesMap.get(clave).imprimirDatosPersona();
         }
     }
 
     public void imprimirEmpleadoEventuales(){
-        String msj="EMPLEADOS EVENTUALES REGISTRADOS\n";
+        System.out.println("EMPLEADOS EVENTUALES REGISTRADOS\n");
         Iterator<String> iterator=empleadoEventualMap.keySet().iterator();
 
         while (iterator.hasNext()){
             String clave= iterator.next();
-            empleadoEventualMap.get(clave).imprimirDatosPersona(msj);
+            empleadoEventualMap.get(clave).imprimirDatosPersona();
         }
     }
 
     public void imprimirEmpleadosPlanilla(){
-        String msj="EMPLEADOS POR PLANILLA REGISTRADOS\n";
+        System.out.println("EMPLEADOS POR PLANILLA REGISTRADOS\n");
         Iterator<String> iterator=empleadoPlanillaMap.keySet().iterator();
 
         while (iterator.hasNext()){
             String clave= iterator.next();
-            empleadoPlanillaMap.get(clave).imprimirDatosPersona(msj);
+            empleadoPlanillaMap.get(clave).imprimirDatosPersona();
         }
     }
 
     public void imprimirMedico(){
-        String msj="MEDICOS REGISTRADOS\n";
+        System.out.println("MEDICOS REGISTRADOS\n");
         Iterator<String> iterator=medicoMap.keySet().iterator();
 
         while (iterator.hasNext()){
             String clave= iterator.next();
-            medicoMap.get(clave).imprimirDatosPersona(msj);
+            medicoMap.get(clave).imprimirDatosPersona();
         }
     }
 }

@@ -17,6 +17,12 @@ public class Medico extends EmpleadoPlanilla {
         numeroConsultorio=JOptionPane.showInputDialog("Ingrese el numero del consultorio");
     }
 
+    public void imprimirDatosPersona() {
+        super.imprimirDatosPersona();
+        System.out.println("Especialidad: " + especialidad
+                + "/n Numero de Consultario: " + numeroConsultorio );
+    }
+
     public String getEspecialidad() {
         return especialidad;
     }

@@ -8,9 +8,9 @@ public class Paciente extends Persona {
     private String grupoSanguineo;
     private ArrayList<String> alergias;
 
-public Paciente (){
+    public Paciente (){
 
-}
+    }
 
     @Override
     public void registrarDatos() {
@@ -38,6 +38,24 @@ public Paciente (){
 
     }
 
+    public void imprimirDatosPersona() {
+        super.imprimirDatosPersona();
+        System.out.println("\n Numero Historia Clinica: " + numeroHistoriaClinica
+                + "\n Sexo: " + sexo
+                + "\n Grupo Sanguineo: " + grupoSanguineo
+                +"\n Lista de Medicamentos: ");
+
+            if (!alergias.isEmpty()) {
+                System.out.println("\n Lista de medicamentos a los que es alérgico:");
+                for (String medicamento : alergias) {
+                    System.out.println("\t- " + medicamento);
+                }
+            } else {
+                System.out.println("El paciente no es alérgico a ningún medicamento.");
+            }
+    }
+
+    //Getters y Setters
     public String getNumeroHistoriaClinica() { return numeroHistoriaClinica; }
     public void setNumeroHistoriaClinica(String numeroHistoriaClinica) { this.numeroHistoriaClinica = numeroHistoriaClinica; }
     public String getSexo() { return sexo; }

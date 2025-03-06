@@ -24,6 +24,15 @@ public class Empleado extends Persona {
         cargo=JOptionPane.showInputDialog("Ingrese el cargo");
     }
 
+    public void imprimirDatosPersona() {
+        super.imprimirDatosPersona();
+        System.out.println("\n Codigo de Empleado: " + codigoEmpleado
+                + "\n Numero de Horas Extras: " + horasExtras
+                + "\n Fecha Ingreso: " + fechaIngreso
+                + "\n Area: " + area
+                + "\n Cargo: " + cargo);
+    }
+
     public String getCodigoEmpleado() { return codigoEmpleado; }
     public void setCodigoEmpleado(String codigoEmpleado) { this.codigoEmpleado = codigoEmpleado; }
     public int getHorasExtras() { return horasExtras; }
