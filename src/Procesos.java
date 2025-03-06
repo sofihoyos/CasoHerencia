@@ -4,6 +4,7 @@ import clases.Paciente;
 import empleado.EmpleadoEventual;
 import empleado.EmpleadoPlanilla;
 import empleado.Medico;
+import clases.CitaMedica;
 
 public class Procesos {
 
@@ -96,7 +97,8 @@ public class Procesos {
         menuImprimir+= "2. Listar Empleados Eventuales\n";
         menuImprimir+= "3. Listar Empleados Por Planilla\n";
         menuImprimir+= "4. Listar Medicos\n";
-        menuImprimir+= "Ingrese una opcion (1-4)\n";
+        menuImprimir+= "5. Listar Citas Programadas\n";
+        menuImprimir+= "Ingrese una opcion (1-5)\n";
 
         int opcion=Integer.parseInt(JOptionPane.showInputDialog(menuImprimir));
 
@@ -105,6 +107,7 @@ public class Procesos {
             case 2: miModeloDatos.imprimirEmpleadoEventuales(); break;
             case 3: miModeloDatos.imprimirEmpleadosPlanilla(); break;
             case 4: miModeloDatos.imprimirMedico(); break;
+            case 5: miModeloDatos.imprimirCitasMedicasProgramadas(); break;
 
             default:System.out.println("No existe esa opcion");
         }
@@ -113,6 +116,29 @@ public class Procesos {
 
 
     private void registrarCitaMedica() {
+        String dniPaciente = JOptionPane.showInputDialog("Ingrese el numero del documento del paciente");
+
+        Paciente pacienteEncontrado = miModeloDatos.consultarPacientePorDocumento(dniPaciente);
+
+        if (pacienteEncontrado != null){
+            String nombreMedico = JOptionPane.showInputDialog("Ingrese el nombre del medico");
+            Medico medicoEncontrado = miModeloDatos.consultaMedicoPorNombre(nombreMedico);
+
+            if (medicoEncontrado != null){
+                String servicio= JOptionPane.showInputDialog("Ingrese el motivo de la consulta");
+                String fechaConsulta= JOptionPane.showInputDialog("Ingrese la fecha de la consulta (dd/mm/aaaa)");
+                String horaConsulta = JOptionPane.showInputDialog("Ingrese la hora de la consulta (HH:MM)");
+                String lugar = "La cita sera en el consultorio "+medicoEncontrado.getNumeroConsultorio();
+
+                CitaMedica miCita = new CitaMedica(pacienteEncontrado, medicoEncontrado, servicio, fechaConsulta, horaConsulta, lugar);
+                miModeloDatos.registrarCitaMedica(miCita);
+
+            }else{
+                System.out.println("El medico no se encuentra registrado");
+            }
+        }else{
+            System.out.println("El paciente no se encuentra registrado");
+        }
     }
 
 
