@@ -1,4 +1,5 @@
 package clases;
+
 import empleado.EmpleadoPlanilla;
 import empleado.EmpleadoEventual;
 import empleado.Medico;

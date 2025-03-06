@@ -43,7 +43,7 @@ public class Paciente extends Persona {
         System.out.println("\n Numero Historia Clinica: " + numeroHistoriaClinica
                 + "\n Sexo: " + sexo
                 + "\n Grupo Sanguineo: " + grupoSanguineo
-                +"\n Lista de Medicamentos: ");
+                +"n Lista de Medicamentos: ");
 
             if (!alergias.isEmpty()) {
                 System.out.println("\n Lista de medicamentos a los que es alérgico:");
