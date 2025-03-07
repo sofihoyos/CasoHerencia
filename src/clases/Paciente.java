@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 public class Paciente extends Persona {
-    private String numeroHistoriaClinica;
+    private int numeroHistoriaClinica;
     private String sexo;
     private String grupoSanguineo;
     private ArrayList<String> alergias;
@@ -19,7 +19,7 @@ public class Paciente extends Persona {
 
         //se llaman los datos del paciente para ingresar
         alergias=new ArrayList<String>();
-        numeroHistoriaClinica= JOptionPane.showInputDialog("Ingrese el numero de historia clinica");
+        numeroHistoriaClinica= Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de historia clinica"));
         sexo= JOptionPane.showInputDialog("Ingrese el sexo (Masculino o Femenino)");
         grupoSanguineo=JOptionPane.showInputDialog("Ingrese el grupo sanguineo");
 
@@ -56,8 +56,8 @@ public class Paciente extends Persona {
     }
 
     //Getters y Setters
-    public String getNumeroHistoriaClinica() { return numeroHistoriaClinica; }
-    public void setNumeroHistoriaClinica(String numeroHistoriaClinica) { this.numeroHistoriaClinica = numeroHistoriaClinica; }
+    public int getNumeroHistoriaClinica() { return numeroHistoriaClinica; }
+    public void setNumeroHistoriaClinica(int numeroHistoriaClinica) { this.numeroHistoriaClinica = numeroHistoriaClinica; }
     public String getSexo() { return sexo; }
     public void setSexo(String sexo) { this.sexo = sexo; }
     public String getGrupoSanguineo() { return grupoSanguineo; }

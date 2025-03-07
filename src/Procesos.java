@@ -1,9 +1,10 @@
 import javax.swing.JOptionPane;
 import clases.ModeloDatos;
 import clases.Paciente;
-import empleado.EmpleadoEventual;
-import empleado.EmpleadoPlanilla;
-import empleado.Medico;
+import clases.Persona;
+import clases.empleado.EmpleadoEventual;
+import clases.empleado.EmpleadoPlanilla;
+import clases.empleado.Medico;
 import clases.CitaMedica;
 
 public class Procesos {
@@ -90,7 +91,6 @@ public class Procesos {
 
     }
 
-
     private void imprimirInformacion() {
         String menuImprimir = "MENU DE INFORMACION.\n";
         menuImprimir+= "1. Listar Pacientes\n";
@@ -98,7 +98,8 @@ public class Procesos {
         menuImprimir+= "3. Listar Empleados Por Planilla\n";
         menuImprimir+= "4. Listar Medicos\n";
         menuImprimir+= "5. Listar Citas Programadas\n";
-        menuImprimir+= "Ingrese una opcion (1-5)\n";
+        menuImprimir+= "6. Consultas Individuales\n";
+        menuImprimir+= "Ingrese una opcion (1-6)\n";
 
         int opcion=Integer.parseInt(JOptionPane.showInputDialog(menuImprimir));
 
@@ -108,11 +109,32 @@ public class Procesos {
             case 3: miModeloDatos.imprimirEmpleadosPlanilla(); break;
             case 4: miModeloDatos.imprimirMedico(); break;
             case 5: miModeloDatos.imprimirCitasMedicasProgramadas(); break;
+            case 6: imprimirInformacion2();break;
 
             default:System.out.println("No existe esa opcion");
         }
     }
 
+
+    private void imprimirInformacion2() {
+        String menuImprimir = "MENU DE CONSULTAS.\n";
+        menuImprimir+= "1. Listar Pacientes por DNI\n";
+        menuImprimir+= "2. Listar Empleados Eventuales por DNI\n";
+        menuImprimir+= "3. Listar Empleados Planilla por DNI\n";
+        menuImprimir+= "4. Listar Medicos por DNI\n";
+        menuImprimir+= "Ingrese una opcion (1-4)\n";
+
+        int opcion=Integer.parseInt(JOptionPane.showInputDialog(menuImprimir));
+
+        switch (opcion){
+            case 1: miModeloDatos.consultaPaciente(JOptionPane.showInputDialog("Ingrese el numero del documento")); break;
+            case 2: miModeloDatos.consultaEmpleadoEventual(JOptionPane.showInputDialog("Ingrese el numero del documento"));break;
+            case 3: miModeloDatos.consultaEmpleadoPlanilla(JOptionPane.showInputDialog("Ingrese el numero de documento")); break;
+            case 4: miModeloDatos.consultaMedico(JOptionPane.showInputDialog("Ingrese el numero del documento")); break;
+
+            default:System.out.println("No existe esa opcion");
+        }
+    }
 
 
     private void registrarCitaMedica() {
@@ -123,8 +145,8 @@ public class Procesos {
         if (pacienteEncontrado != null){
             String nombreMedico = JOptionPane.showInputDialog("Ingrese el nombre del medico");
             Medico medicoEncontrado = miModeloDatos.consultaMedicoPorNombre(nombreMedico);
-
             if (medicoEncontrado != null){
+
                 String servicio= JOptionPane.showInputDialog("Ingrese el motivo de la consulta");
                 String fechaConsulta= JOptionPane.showInputDialog("Ingrese la fecha de la consulta (dd/mm/aaaa)");
                 String horaConsulta = JOptionPane.showInputDialog("Ingrese la hora de la consulta (HH:MM)");

@@ -1,8 +1,8 @@
 package clases;
 
-import empleado.EmpleadoPlanilla;
-import empleado.EmpleadoEventual;
-import empleado.Medico;
+import clases.empleado.EmpleadoPlanilla;
+import clases.empleado.EmpleadoEventual;
+import clases.empleado.Medico;
 import clases.CitaMedica;
 
 import java.util.ArrayList;
@@ -25,23 +25,40 @@ public class ModeloDatos {
     }
 
     public void registrarPersona(Paciente miPaciente){
-        pacientesMap.put(miPaciente.getDni(), miPaciente);
-        System.out.println("Se ha registrado el paciente " +miPaciente.getNombre()+ " ¡EXITOSAMENTE!");
+        if (pacientesMap.containsKey(miPaciente.getDni())) {
+            System.out.println("El paciente ya se encuentra registrado en el sistema");
+
+        } else {
+            pacientesMap.put(miPaciente.getDni(), miPaciente);
+            System.out.println("Se ha registrado el paciente " +miPaciente.getNombre()+ " ¡EXITOSAMENTE!");
+        }
     }
 
     public void registrarPersona(EmpleadoPlanilla miEmpleadoPlanilla){
-        empleadoPlanillaMap.put(miEmpleadoPlanilla.getDni(), miEmpleadoPlanilla);
-        System.out.println("Se ha registrado el empleado por planilla " +miEmpleadoPlanilla.getNombre()+ " ¡EXITOSAMENTE!");
+        if (empleadoPlanillaMap.containsKey(miEmpleadoPlanilla.getDni())){
+            System.out.println("El empleado por planilla ya se encuentra registrado en el sistema");
+        }else {
+            empleadoPlanillaMap.put(miEmpleadoPlanilla.getDni(), miEmpleadoPlanilla);
+            System.out.println("Se ha registrado el empleado por planilla " + miEmpleadoPlanilla.getNombre() + " ¡EXITOSAMENTE!");
+        }
     }
 
     public void registrarPersona(EmpleadoEventual miEmpleadoEventual){
-        empleadoEventualMap.put(miEmpleadoEventual.getDni(), miEmpleadoEventual);
-        System.out.println("Se ha registrado el empleado eventual " +miEmpleadoEventual.getNombre()+ " ¡EXITOSAMENTE!");
+        if (empleadoEventualMap.containsKey(miEmpleadoEventual.getDni())){
+            System.out.println("El empleado eventual ya se encuentra registrado en el sistema");
+        } else {
+            empleadoEventualMap.put(miEmpleadoEventual.getDni(), miEmpleadoEventual);
+            System.out.println("Se ha registrado el empleado eventual " + miEmpleadoEventual.getNombre() + " ¡EXITOSAMENTE!");
+        }
     }
 
     public void registrarPersona(Medico miMedico){
-        medicoMap.put(miMedico.getDni(), miMedico);
-        System.out.println("Se ha registrado el medico " +miMedico.getNombre()+ " ¡EXITOSAMENTE!");
+        if (medicoMap.containsKey(miMedico.getDni())){
+            System.out.println("El medico ya se encuentra registrado en el sistema");
+        } else {
+            medicoMap.put(miMedico.getDni(), miMedico);
+            System.out.println("Se ha registrado el medico " + miMedico.getNombre() + " ¡EXITOSAMENTE!");
+        }
     }
 
     public void imprimirPacientes(){
@@ -67,6 +84,8 @@ public class ModeloDatos {
     public void imprimirEmpleadosPlanilla(){
         System.out.println("EMPLEADOS POR PLANILLA REGISTRADOS\n");
         Iterator<String> iterator=empleadoPlanillaMap.keySet().iterator();
+        System.out.println("\n");
+        imprimirMedico();
 
         while (iterator.hasNext()){
             String clave= iterator.next();
@@ -105,6 +124,65 @@ public class ModeloDatos {
 
         //si el paciente existe lo retorna, sino retorna nulo
         return miPaciente;
+    }
+
+    public EmpleadoPlanilla consultaEmpleadoPlanilla(String dniEmpleadoPlanilla) {
+        EmpleadoPlanilla miEmpleadoPlanilla = null;
+
+        if (empleadoPlanillaMap.containsKey(dniEmpleadoPlanilla)){
+            miEmpleadoPlanilla=empleadoPlanillaMap.get(dniEmpleadoPlanilla);
+            System.out.println("Empleado encontrado: " + miEmpleadoPlanilla.getNombre()); // Verificar si se obtiene un objeto válido
+            miEmpleadoPlanilla.imprimirDatosPersona();
+        } else {
+            System.out.println("No se encontró un empleado con ese DNI.");
+        }
+
+        return miEmpleadoPlanilla;
+
+    }
+    public EmpleadoEventual consultaEmpleadoEventual(String dniEmpleadoEventual) {
+        EmpleadoEventual miEmpleadoEventual = null;
+
+        if (empleadoEventualMap.containsKey(dniEmpleadoEventual)){
+            miEmpleadoEventual=empleadoEventualMap.get(dniEmpleadoEventual);
+            System.out.println("Empleado encontrado: " + miEmpleadoEventual.getNombre()); // Verificar si se obtiene un objeto válido
+            miEmpleadoEventual.imprimirDatosPersona();
+        } else {
+            System.out.println("No se encontró un empleado con ese DNI.");
+        }
+
+        return miEmpleadoEventual;
+
+    }
+
+    public Paciente consultaPaciente(String dniPaciente) {
+        Paciente miPaciente = null;
+
+        if (pacientesMap.containsKey(dniPaciente)){
+            miPaciente=pacientesMap.get(dniPaciente);
+            System.out.println("Empleado encontrado: " + miPaciente.getNombre()); // Verificar si se obtiene un objeto válido
+            miPaciente.imprimirDatosPersona();
+        } else {
+            System.out.println("No se encontró un empleado con ese DNI.");
+        }
+
+        return miPaciente;
+
+    }
+
+    public Medico consultaMedico(String dniMedico) {
+        Medico miMedico = null;
+
+        if (medicoMap.containsKey(dniMedico)){
+            miMedico=medicoMap.get(dniMedico);
+            System.out.println("Empleado encontrado: " + miMedico.getNombre()); // Verificar si se obtiene un objeto válido
+            miMedico.imprimirDatosPersona();
+        } else {
+            System.out.println("No se encontró un empleado con ese DNI.");
+        }
+
+        return miMedico;
+
     }
 
     public void registrarCitaMedica(CitaMedica miCita){

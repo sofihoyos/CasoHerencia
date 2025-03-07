@@ -1,4 +1,4 @@
-package empleado;
+package clases.empleado;
 import javax.swing.JOptionPane;
 
 public class EmpleadoPlanilla extends Empleado {

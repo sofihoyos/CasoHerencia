@@ -45,5 +45,4 @@ public  class Persona {
     public String getCiudadProcedencia() { return ciudadProcedencia; }
     public void setCiudadProcedencia(String ciudadProcedencia) { this.ciudadProcedencia = ciudadProcedencia; }
 
-
 }

@@ -1,4 +1,4 @@
-package empleado;
+package clases.empleado;
 import clases.Persona;
 import javax.swing.*;
 

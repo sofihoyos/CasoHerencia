@@ -1,5 +1,5 @@
 package clases;
-import empleado.Medico;
+import clases.empleado.Medico;
 
 public class CitaMedica{
     private Paciente paciente;
